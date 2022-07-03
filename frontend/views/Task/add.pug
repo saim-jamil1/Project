@@ -1,0 +1,18 @@
+extend ../layout
+
+block content
+    
+    h1 Add new task
+    form(action="/tasks/add", method="post")
+        .form-group
+            label(for="title") Name
+            input(type="text", name="title", class="form-control")
+        .form-group
+            label(for="date") Date
+            input(type="text", name="date", class="form-control")
+        .form-group
+            label(for="status") Status 
+            input(type="text", name="status", class="form-control")
+        
+        input(type="submit", class="btn btn-info")
+        

@@ -1,0 +1,16 @@
+extend ../layout
+
+block content
+    h1 Edit task 
+    form(action="/tasks/edit/"+user._id , method="post")
+        .form-group
+            label(for="title") Title
+            input(type="text", name="title", class="form-control" value=task.title)
+        .form-group
+            label(for="date") Date
+            input(type="text", name="date", class="form-control" value=task.date)
+        .form-group
+            label(for="status") Status 
+            input(type="text", name="status", class="form-control" value=task.status)
+        input(type="submit", class="btn btn-info")
+        

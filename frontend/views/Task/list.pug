@@ -1,0 +1,27 @@
+extend ../layout
+
+block content
+        include ../partials/navbar
+        .row
+                .col-sm-8
+                        h1=title
+                .col-sm-4
+                        a(href="/tasks/add", class="btn btn-success float-right")  <i class="fa fa-plus" aria-hidden="true"></i>
+        
+        table.table
+                thead
+                        tr
+                                th Actions
+                                th task title
+                                th task date
+                                th task status
+                                
+                tbody
+                        each task in tasks
+                                tr
+                                        td
+                                                a(href="/tasks/edit/" + task.id, class="btn ") <i class="fa fa-pencil" aria-hidden="true"></i>
+                                                a(href="/tasks/delete/" + task.id, class="btn ") <i class="fa fa-trash" aria-hidden="true"></i>
+                                        td= task.title
+                                        td= task.date
+                                        td= task.status 

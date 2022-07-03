@@ -1,0 +1,26 @@
+extend layout 
+
+block content
+    h1=title 
+    -var totalBill = 0
+    table.table
+        thead
+            tr
+                th Product title
+                th Product Name
+                th Product price
+                th Product Description
+        tbody
+            each product in cart
+                tr
+                
+                    td= product.title
+                    td= product.name
+                    td= product.price
+                    td= product.description
+                    -totalBill += product.price
+        tfoot
+            tr
+                td Total 
+                td=totalBill 
+                    

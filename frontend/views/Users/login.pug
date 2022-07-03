@@ -1,0 +1,13 @@
+extends ../layout 
+
+block content 
+    h1 login user
+    form(action="/login", method="post")
+        .form-group
+            label(for="email") email 
+            input(type="text", name="email", class="form-control")
+        .form-group
+            label(for="password") password 
+            input(type="password", name="password", class="form-control")
+        input(type="submit", class="btn btn-info") 
+    a(href="/register" class="btn btn-danger" style = "float:right") register
